@@ -13,7 +13,7 @@ extension DatePickerViewController {
     func configureTitleImage() {
         
         self.titleImage.image = UIImage(systemName: "questionmark")
-        self.titleImage.tintColor = UIColor(named: "textPrimaryColor")
+        self.titleImage.tintColor = UIColor(named: "accentColor")
         
         self.titleImage.snp.makeConstraints { make in
             make.centerX.equalToSuperview()

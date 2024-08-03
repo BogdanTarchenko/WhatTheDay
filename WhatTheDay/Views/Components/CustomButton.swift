@@ -30,7 +30,7 @@ class CustomButton: UIButton {
 extension CustomButton {
     private func setupButton() {
         
-        self.backgroundColor = UIColor(named: "buttonColor")
+        self.backgroundColor = UIColor(named: "accentColor")
         
         self.setTitle(NSLocalizedString("findOut", comment: ""), for: .normal)
         self.setTitleColor(.systemBackground, for: .normal)
