@@ -48,7 +48,6 @@ extension DatePickerViewController {
     }
     
     func configureButton() {
-        
         self.button.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(datePicker.snp.bottom).offset(Constants.offsetValue())
@@ -56,6 +55,13 @@ extension DatePickerViewController {
             make.width.equalTo(Constants.buttonWidth())
             make.height.equalTo(Constants.buttonHeight())
         }
+    }
+}
+
+// MARK: - Button OnTap method
+extension DatePickerViewController {
+    func didTapButton() {
+        /* метод */
     }
 }
 

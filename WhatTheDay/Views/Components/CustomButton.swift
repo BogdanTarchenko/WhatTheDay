@@ -7,8 +7,14 @@
 
 import UIKit
 
+protocol CustomButtonDelegate: AnyObject {
+    func didTapButton()
+}
+
 class CustomButton: UIButton {
 // MARK: - Init
+    weak var delegate: CustomButtonDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupButton()
@@ -33,6 +39,15 @@ extension CustomButton {
         
         self.layer.cornerRadius = Constants.cornerRadiusValue()
         self.layer.masksToBounds = true
+        
+        self.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+    }
+}
+
+// MARK: - OnTap method
+extension CustomButton {
+    @objc private func buttonTapped() {
+        delegate?.didTapButton()
     }
 }
 
