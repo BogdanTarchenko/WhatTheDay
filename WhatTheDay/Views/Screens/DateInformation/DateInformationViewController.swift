@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DateInformationViewController: UIViewController {
+class DateInformationViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

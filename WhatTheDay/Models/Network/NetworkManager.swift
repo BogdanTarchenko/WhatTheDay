@@ -15,6 +15,7 @@ enum CustomError: Error {
     case decodingError
 }
 
+// MARK: - API
 enum Api {
     enum Method {
         case get
@@ -51,6 +52,7 @@ enum Api {
     }
 }
 
+// MARK: - Network Manager
 final class NetworkManager {
     func fetch<T: Decodable>(api: Api, resultType: T.Type, completion: @escaping (Result<T, CustomError>) -> Void) {
         
@@ -83,7 +85,10 @@ final class NetworkManager {
         }
         task.resume()
     }
-    
+}
+
+// MARK: - fetch function for NumbersAPI
+extension NetworkManager {
     func fetchForDate<T: Decodable>(date: Date, resultType: T.Type, completion: @escaping (Result<T, CustomError>) -> Void) {
         
         let calendar = Calendar.current

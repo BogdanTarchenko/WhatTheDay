@@ -61,7 +61,9 @@ extension DatePickerViewController {
 // MARK: - Button OnTap method
 extension DatePickerViewController {
     func didTapButton() {
-        /* метод */
+        /* Рваный переход на другой экран, нужно исправить */
+        let nextViewController = DateInformationViewController()
+        navigationController?.pushViewController(nextViewController, animated: true)
     }
 }
 

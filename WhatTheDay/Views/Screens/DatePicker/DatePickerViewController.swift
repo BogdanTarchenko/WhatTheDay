@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DatePickerViewController: UIViewController, CustomButtonDelegate {
+class DatePickerViewController: BaseViewController, CustomButtonDelegate {
 // MARK: - Init
     var titleLabel: UILabel = {
         let label = UILabel()
