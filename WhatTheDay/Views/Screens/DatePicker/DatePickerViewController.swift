@@ -44,7 +44,6 @@ class DatePickerViewController: BaseViewController, CustomButtonDelegate {
         self.configureDatePicker()
         
         self.view.addSubview(button)
-        button.delegate = self
         self.configureButton()
     }
 }

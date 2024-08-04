@@ -18,7 +18,7 @@ class BaseViewController: UIViewController {
     }
 }
 
-// MARK: CustomBackButton setup methods
+// MARK: CustomBackButton setup method
 extension BaseViewController {
     private func setupCustomBackButton() {
         let customBackButton = UIButton(type: .custom)
@@ -29,8 +29,11 @@ extension BaseViewController {
         let customBackBarButtonItem = UIBarButtonItem(customView: customBackButton)
         navigationItem.leftBarButtonItem = customBackBarButtonItem
     }
-    
-    @objc func customBackButtonTapped() {
+}
+
+// MARK: - OnTap method
+extension BaseViewController {
+    @objc private func customBackButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
 }

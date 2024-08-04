@@ -76,11 +76,15 @@ final class NetworkManager {
                 return
             }
             
-            do {
-                let response = try JSONDecoder().decode(T.self, from: data)
-                completion(.success(response))
-            } catch {
-                completion(.failure(.decodingError))
+            if let stringData = String(data: data, encoding: .utf8) as? T {
+                completion(.success(stringData))
+            } else {
+                do {
+                    let response = try JSONDecoder().decode(T.self, from: data)
+                    completion(.success(response))
+                } catch {
+                    completion(.failure(.decodingError))
+                }
             }
         }
         task.resume()
@@ -89,13 +93,13 @@ final class NetworkManager {
 
 // MARK: - fetch function for NumbersAPI
 extension NetworkManager {
-    func fetchForDate<T: Decodable>(date: Date, resultType: T.Type, completion: @escaping (Result<T, CustomError>) -> Void) {
+    func fetchForDate(date: Date, completion: @escaping (Result<String, CustomError>) -> Void) {
         
         let calendar = Calendar.current
         let month = calendar.component(.month, from: date)
         let day = calendar.component(.day, from: date)
         
         let api = Api.date(month: month, day: day)
-        fetch(api: api, resultType: T.self, completion: completion)
+        fetch(api: api, resultType: String.self, completion: completion)
     }
 }

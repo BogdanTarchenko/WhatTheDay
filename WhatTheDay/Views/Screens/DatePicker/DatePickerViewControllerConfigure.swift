@@ -11,7 +11,6 @@ import SnapKit
 // MARK: - Configure Methods
 extension DatePickerViewController {
     func configureTitleImage() {
-        
         self.titleImage.image = UIImage(systemName: "questionmark")
         self.titleImage.tintColor = UIColor(named: "accentColor")
         
@@ -24,7 +23,6 @@ extension DatePickerViewController {
     }
     
     func configureTitleLabel() {
-        
         self.titleLabel.text = NSLocalizedString("whatsTheDay", comment: "")
         self.titleLabel.font = .systemFont(ofSize: Constants.titleSizeValue(), weight: .bold)
         self.titleLabel.textAlignment = .center
@@ -37,7 +35,6 @@ extension DatePickerViewController {
     }
     
     func configureDatePicker() {
-        
         self.datePicker.datePickerMode = .date
         self.datePicker.preferredDatePickerStyle = .wheels
         
@@ -48,6 +45,8 @@ extension DatePickerViewController {
     }
     
     func configureButton() {
+        button.delegate = self
+        
         self.button.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(datePicker.snp.bottom).offset(Constants.offsetValue())
@@ -61,9 +60,26 @@ extension DatePickerViewController {
 // MARK: - Button OnTap method
 extension DatePickerViewController {
     func didTapButton() {
+        fetchInformation()
+        
         /* Рваный переход на другой экран, нужно исправить */
         let nextViewController = DateInformationViewController()
         navigationController?.pushViewController(nextViewController, animated: true)
+    }
+}
+
+// MARK: - Fetch method
+extension DatePickerViewController {
+    func fetchInformation() {
+        let networkManager = NetworkManager()
+        networkManager.fetchForDate(date: datePicker.date) { result in
+            switch result {
+            case .success(let response):
+                print(response)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 

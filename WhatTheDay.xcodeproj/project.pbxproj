@@ -12,8 +12,6 @@
 		FC0CCE692C5EBC1A00202D1B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE682C5EBC1A00202D1B /* CustomButton.swift */; };
 		FC0CCE6C2C5ECB4700202D1B /* DateInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE6B2C5ECB4700202D1B /* DateInformationViewController.swift */; };
 		FC0CCE6F2C5ECD1600202D1B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE6E2C5ECD1600202D1B /* NetworkManager.swift */; };
-		FC0CCE722C5EDE6700202D1B /* DateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE712C5EDE6700202D1B /* DateRequest.swift */; };
-		FC0CCE742C5EDE6E00202D1B /* DateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE732C5EDE6E00202D1B /* DateResponse.swift */; };
 		FC0CCE762C5EE3F400202D1B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE752C5EE3F400202D1B /* BaseViewController.swift */; };
 		FC42D60D2C5E5EB800650093 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42D60C2C5E5EB800650093 /* AppDelegate.swift */; };
 		FC42D60F2C5E5EB800650093 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42D60E2C5E5EB800650093 /* SceneDelegate.swift */; };
@@ -30,8 +28,6 @@
 		FC0CCE682C5EBC1A00202D1B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		FC0CCE6B2C5ECB4700202D1B /* DateInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInformationViewController.swift; sourceTree = "<group>"; };
 		FC0CCE6E2C5ECD1600202D1B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		FC0CCE712C5EDE6700202D1B /* DateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRequest.swift; sourceTree = "<group>"; };
-		FC0CCE732C5EDE6E00202D1B /* DateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateResponse.swift; sourceTree = "<group>"; };
 		FC0CCE752C5EE3F400202D1B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		FC42D6092C5E5EB800650093 /* WhatTheDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatTheDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC42D60C2C5E5EB800650093 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,13 +75,11 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		FC0CCE702C5EDE2000202D1B /* NumbersAPI */ = {
+		FC0CCE7A2C5F442400202D1B /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				FC0CCE712C5EDE6700202D1B /* DateRequest.swift */,
-				FC0CCE732C5EDE6E00202D1B /* DateResponse.swift */,
 			);
-			path = NumbersAPI;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		FC42D6002C5E5EB700650093 = {
@@ -146,7 +140,7 @@
 		FC42D6232C5E60E700650093 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FC0CCE702C5EDE2000202D1B /* NumbersAPI */,
+				FC0CCE7A2C5F442400202D1B /* Data */,
 				FC0CCE6D2C5ECD0700202D1B /* Network */,
 			);
 			path = Models;
@@ -252,12 +246,10 @@
 				FC42D60D2C5E5EB800650093 /* AppDelegate.swift in Sources */,
 				FC42D60F2C5E5EB800650093 /* SceneDelegate.swift in Sources */,
 				FC42D6252C5E618E00650093 /* DatePickerViewController.swift in Sources */,
-				FC0CCE722C5EDE6700202D1B /* DateRequest.swift in Sources */,
 				FC0CCE6F2C5ECD1600202D1B /* NetworkManager.swift in Sources */,
 				FC0CCE762C5EE3F400202D1B /* BaseViewController.swift in Sources */,
 				FC0CCE672C5E697E00202D1B /* DatePickerViewControllerConfigure.swift in Sources */,
 				FC0CCE692C5EBC1A00202D1B /* CustomButton.swift in Sources */,
-				FC0CCE742C5EDE6E00202D1B /* DateResponse.swift in Sources */,
 				FC0CCE6C2C5ECB4700202D1B /* DateInformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
