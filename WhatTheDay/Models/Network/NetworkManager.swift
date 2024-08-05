@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - Error
 enum CustomError: Error {
@@ -21,7 +22,7 @@ enum Api {
         case get
         case post(request: Encodable)
         case put(request: Encodable)
-    
+        
         var rawValue: String {
             switch self {
             case .get:      return "GET"
@@ -32,22 +33,25 @@ enum Api {
     }
     
     case date(month: Int, day: Int)
+    case photo(keyword: String, accessKey: String)
     
     var endpoint: String {
         switch self {
-        case .date(let month, let day):     return "\(month)/\(day)/date"
+        case .date(let month, let day):             return "\(month)/\(day)/date"
+        case .photo(let keyword, let accessKey):    return "search/photos?page=1&query=\(keyword)&client_id=\(accessKey)"
         }
     }
     
     var method: Method {
         switch self {
-        case .date:     return .get
+        case .date, .photo:     return .get
         }
     }
     
     var baseURL: String {
         switch self {
         case .date:     return "http://numbersapi.com/"
+        case .photo:    return "https://api.unsplash.com/"
         }
     }
 }
@@ -101,5 +105,58 @@ extension NetworkManager {
         
         let api = Api.date(month: month, day: day)
         fetch(api: api, resultType: String.self, completion: completion)
+    }
+}
+
+// MARK: - fetch function for Unsplash API
+extension NetworkManager {
+    func fetchFirstImage(keyword: String, completion: @escaping (Result<UIImage, CustomError>) -> Void) {
+        let api = Api.photo(keyword: keyword, accessKey: APIKeys.unsplashAPIKey)
+        fetch(api: api, resultType: UnsplashResponse.self) { result in
+            switch result {
+            case .success(let response):
+                if let firstPhoto = response.results.first, let imageURL = URL(string: firstPhoto.urls.small) {
+                    self.downloadImage(from: imageURL) { result in
+                        switch result {
+                        case .success(let image):
+                            completion(.success(image))
+                        case .failure(let error):
+                            completion(.failure(error))
+                        }
+                    }
+                } else {
+                    completion(.failure(.noData))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+}
+
+// MARK: - Download image method
+extension NetworkManager {
+    func downloadImage(from url: URL, completion: @escaping (Result<UIImage, CustomError>) -> Void) {
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let _ = error {
+                completion(.failure(.requestFailed))
+                return
+            }
+            
+            guard let data = data, let image = UIImage(data: data) else {
+                completion(.failure(.noData))
+                return
+            }
+            
+            completion(.success(image))
+        }
+        task.resume()
+    }
+}
+
+// MARK: - API Keys
+extension NetworkManager {
+    enum APIKeys {
+        static let unsplashAPIKey: String = "__znh41-xQU2ZapY_JVXs_ucxf0Ec85sERAf65EoFiA"
     }
 }

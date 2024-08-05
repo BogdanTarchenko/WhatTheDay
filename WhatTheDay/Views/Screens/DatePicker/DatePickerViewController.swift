@@ -9,6 +9,10 @@ import UIKit
 
 class DatePickerViewController: BaseViewController, CustomButtonDelegate {
 // MARK: - Init
+    var image: UIImage?
+    var information: String?
+    var loader: UIActivityIndicatorView?
+    
     var titleLabel: UILabel = {
         let label = UILabel()
         return label

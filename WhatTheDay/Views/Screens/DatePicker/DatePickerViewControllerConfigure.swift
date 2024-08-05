@@ -12,7 +12,7 @@ import SnapKit
 extension DatePickerViewController {
     func configureTitleImage() {
         self.titleImage.image = UIImage(systemName: "questionmark")
-        self.titleImage.tintColor = UIColor(named: "accentColor")
+        self.titleImage.tintColor = .accent
         
         self.titleImage.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -26,7 +26,7 @@ extension DatePickerViewController {
         self.titleLabel.text = NSLocalizedString("whatsTheDay", comment: "")
         self.titleLabel.font = .systemFont(ofSize: Constants.titleSizeValue(), weight: .bold)
         self.titleLabel.textAlignment = .center
-        self.titleLabel.textColor = UIColor(named: "textPrimaryColor")
+        self.titleLabel.textColor = .textPrimary
         
         self.titleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -60,24 +60,13 @@ extension DatePickerViewController {
 // MARK: - Button OnTap method
 extension DatePickerViewController {
     func didTapButton() {
-        fetchInformation()
-        
-        /* Рваный переход на другой экран, нужно исправить */
-        let nextViewController = DateInformationViewController()
-        navigationController?.pushViewController(nextViewController, animated: true)
-    }
-}
-
-// MARK: - Fetch method
-extension DatePickerViewController {
-    func fetchInformation() {
-        let networkManager = NetworkManager()
-        networkManager.fetchForDate(date: datePicker.date) { result in
-            switch result {
-            case .success(let response):
-                print(response)
-            case .failure(let error):
-                print(error.localizedDescription)
+        fetchInformation {
+            if let image = self.image {
+                let nextViewController = DateInformationViewController(information: self.information ?? Constants.emptyString, image: image)
+                self.navigationController?.pushViewController(nextViewController, animated: true)
+            } else {
+                let nextViewController = DateInformationViewController(information: self.information ?? Constants.emptyString, image: Constants.emptyImage!)
+                self.navigationController?.pushViewController(nextViewController, animated: true)
             }
         }
     }
@@ -89,7 +78,10 @@ extension DatePickerViewController {
         static let screenWidth = UIScreen.main.bounds.width
         static let screenHeight = UIScreen.main.bounds.height
         
-        static let imageAspectRatio = 1.35
+        static let imageAspectRatio: CGFloat = 1.35
+        
+        static let emptyString: String = ""
+        static let emptyImage = UIImage(systemName: "eye.slash")
         
         static func titleSizeValue() -> CGFloat {
             return screenWidth * 0.1

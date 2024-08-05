@@ -10,16 +10,26 @@ import SnapKit
 
 // MARK: - Configure Methods
 extension DateInformationViewController {
+    func configureInformationImage() {
+        self.informationImage.image = self.image
+        self.informationImage.contentMode = .scaleAspectFit
+        
+        self.informationImage.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(Constants.insetValue())
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+        }
+    }
+    
     func configureInformationLabel() {
-        self.informationLabel.text = "Тут должна быть информация о дате"
+        self.informationLabel.text = self.information
         self.informationLabel.numberOfLines = 0
         self.informationLabel.font = .systemFont(ofSize: Constants.informationSizeValue(), weight: .medium)
         self.informationLabel.textAlignment = .center
-        self.informationLabel.textColor = UIColor(named: "textPrimaryColor")
+        self.informationLabel.textColor = .textPrimary
         
         self.informationLabel.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Constants.insetValue())
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(Constants.offsetValue())
+            make.top.equalTo(informationImage.snp.bottom).offset(Constants.offsetValue())
         }
     }
 }
@@ -29,6 +39,8 @@ extension DateInformationViewController {
     enum Constants {
         static let screenWidth = UIScreen.main.bounds.width
         static let screenHeight = UIScreen.main.bounds.height
+        
+        static let emptyImage = UIImage(systemName: "eye.slash")
         
         static func informationSizeValue() -> CGFloat {
             return screenWidth * 0.06

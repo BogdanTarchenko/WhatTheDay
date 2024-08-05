@@ -23,7 +23,7 @@ extension BaseViewController {
     private func setupCustomBackButton() {
         let customBackButton = UIButton(type: .custom)
         customBackButton.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-        customBackButton.tintColor = UIColor(named: "accentColor")
+        customBackButton.tintColor = .accent
         customBackButton.addTarget(self, action: #selector(customBackButtonTapped), for: .touchUpInside)
         
         let customBackBarButtonItem = UIBarButtonItem(customView: customBackButton)
