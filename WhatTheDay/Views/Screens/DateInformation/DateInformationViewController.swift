@@ -22,6 +22,16 @@ class DateInformationViewController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        return scrollView
+    }()
+    
+    let contentView: UIView = {
+        let view = UIView()
+        return view
+    }()
+    
     var informationImage: UIImageView = {
         let image = UIImageView()
         return image
@@ -37,10 +47,16 @@ class DateInformationViewController: BaseViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
         
-        self.view.addSubview(informationImage)
+        self.view.addSubview(scrollView)
+        self.configureScrollView()
+        
+        scrollView.addSubview(contentView)
+        self.configureContentView()
+        
+        contentView.addSubview(informationImage)
         self.configureInformationImage()
         
-        self.view.addSubview(informationLabel)
+        contentView.addSubview(informationLabel)
         self.configureInformationLabel()
     }
 }

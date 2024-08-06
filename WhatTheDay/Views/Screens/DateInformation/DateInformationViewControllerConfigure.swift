@@ -10,13 +10,26 @@ import SnapKit
 
 // MARK: - Configure Methods
 extension DateInformationViewController {
+    func configureScrollView() {
+        scrollView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
+    }
+    
+    func configureContentView() {
+        contentView.snp.makeConstraints { make in
+            make.edges.equalTo(scrollView)
+            make.width.equalTo(scrollView)
+        }
+    }
+    
     func configureInformationImage() {
         self.informationImage.image = self.image
         self.informationImage.contentMode = .scaleAspectFit
         
         self.informationImage.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Constants.insetValue())
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.top.equalToSuperview().offset(Constants.offsetValue())
         }
     }
     
@@ -30,6 +43,7 @@ extension DateInformationViewController {
         self.informationLabel.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Constants.insetValue())
             make.top.equalTo(informationImage.snp.bottom).offset(Constants.offsetValue())
+            make.bottom.equalToSuperview().offset(-Constants.offsetValue())
         }
     }
 }
