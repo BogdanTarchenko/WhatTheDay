@@ -19,6 +19,14 @@
 		FC0CCE852C6103CB00202D1B /* UnsplashPhotoURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE842C6103CB00202D1B /* UnsplashPhotoURLs.swift */; };
 		FC0CCE872C61098500202D1B /* DatePickerViewControllerLoaderLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE862C61098500202D1B /* DatePickerViewControllerLoaderLogic.swift */; };
 		FC0CCE892C6109CC00202D1B /* DatePickerViewControllerFetchMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE882C6109CC00202D1B /* DatePickerViewControllerFetchMethod.swift */; };
+		FC0CCE8C2C614F9300202D1B /* TranslateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE8B2C614F9300202D1B /* TranslateRequest.swift */; };
+		FC0CCE8E2C61500400202D1B /* TranslateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE8D2C61500400202D1B /* TranslateResponse.swift */; };
+		FC0CCE902C624A2100202D1B /* NetworkManagerUnsplash.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE8F2C624A2100202D1B /* NetworkManagerUnsplash.swift */; };
+		FC0CCE922C624A7400202D1B /* NetworkManagerNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE912C624A7400202D1B /* NetworkManagerNumbers.swift */; };
+		FC0CCE942C624AA200202D1B /* NetworkManagerYandex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE932C624AA200202D1B /* NetworkManagerYandex.swift */; };
+		FC0CCE962C624AD000202D1B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE952C624AD000202D1B /* API.swift */; };
+		FC0CCE982C624AF300202D1B /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE972C624AF300202D1B /* CustomError.swift */; };
+		FC0CCE9D2C624B4300202D1B /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE9C2C624B4300202D1B /* APIKeys.swift */; };
 		FC42D60D2C5E5EB800650093 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42D60C2C5E5EB800650093 /* AppDelegate.swift */; };
 		FC42D60F2C5E5EB800650093 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42D60E2C5E5EB800650093 /* SceneDelegate.swift */; };
 		FC42D6162C5E5EBA00650093 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC42D6152C5E5EBA00650093 /* Assets.xcassets */; };
@@ -41,6 +49,14 @@
 		FC0CCE842C6103CB00202D1B /* UnsplashPhotoURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPhotoURLs.swift; sourceTree = "<group>"; };
 		FC0CCE862C61098500202D1B /* DatePickerViewControllerLoaderLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewControllerLoaderLogic.swift; sourceTree = "<group>"; };
 		FC0CCE882C6109CC00202D1B /* DatePickerViewControllerFetchMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewControllerFetchMethod.swift; sourceTree = "<group>"; };
+		FC0CCE8B2C614F9300202D1B /* TranslateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateRequest.swift; sourceTree = "<group>"; };
+		FC0CCE8D2C61500400202D1B /* TranslateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateResponse.swift; sourceTree = "<group>"; };
+		FC0CCE8F2C624A2100202D1B /* NetworkManagerUnsplash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerUnsplash.swift; sourceTree = "<group>"; };
+		FC0CCE912C624A7400202D1B /* NetworkManagerNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerNumbers.swift; sourceTree = "<group>"; };
+		FC0CCE932C624AA200202D1B /* NetworkManagerYandex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerYandex.swift; sourceTree = "<group>"; };
+		FC0CCE952C624AD000202D1B /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		FC0CCE972C624AF300202D1B /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		FC0CCE9C2C624B4300202D1B /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		FC42D6092C5E5EB800650093 /* WhatTheDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatTheDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC42D60C2C5E5EB800650093 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC42D60E2C5E5EB800650093 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,7 +101,9 @@
 		FC0CCE6D2C5ECD0700202D1B /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				FC0CCE6E2C5ECD1600202D1B /* NetworkManager.swift */,
+				FC0CCE9A2C624B1D00202D1B /* Error */,
+				FC0CCE9B2C624B2600202D1B /* API */,
+				FC0CCE992C624B0A00202D1B /* NetworkManager */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -98,6 +116,43 @@
 				FC0CCE842C6103CB00202D1B /* UnsplashPhotoURLs.swift */,
 			);
 			path = Unsplash;
+			sourceTree = "<group>";
+		};
+		FC0CCE8A2C614F7D00202D1B /* YandexTranslate */ = {
+			isa = PBXGroup;
+			children = (
+				FC0CCE8B2C614F9300202D1B /* TranslateRequest.swift */,
+				FC0CCE8D2C61500400202D1B /* TranslateResponse.swift */,
+			);
+			path = YandexTranslate;
+			sourceTree = "<group>";
+		};
+		FC0CCE992C624B0A00202D1B /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				FC0CCE6E2C5ECD1600202D1B /* NetworkManager.swift */,
+				FC0CCE912C624A7400202D1B /* NetworkManagerNumbers.swift */,
+				FC0CCE8F2C624A2100202D1B /* NetworkManagerUnsplash.swift */,
+				FC0CCE932C624AA200202D1B /* NetworkManagerYandex.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		FC0CCE9A2C624B1D00202D1B /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				FC0CCE972C624AF300202D1B /* CustomError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		FC0CCE9B2C624B2600202D1B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FC0CCE952C624AD000202D1B /* API.swift */,
+				FC0CCE9C2C624B4300202D1B /* APIKeys.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		FC42D6002C5E5EB700650093 = {
@@ -158,6 +213,7 @@
 		FC42D6232C5E60E700650093 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FC0CCE8A2C614F7D00202D1B /* YandexTranslate */,
 				FC0CCE7F2C60FBEE00202D1B /* Unsplash */,
 				FC0CCE6D2C5ECD0700202D1B /* Network */,
 			);
@@ -261,20 +317,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC0CCE9D2C624B4300202D1B /* APIKeys.swift in Sources */,
 				FC42D60D2C5E5EB800650093 /* AppDelegate.swift in Sources */,
 				FC42D60F2C5E5EB800650093 /* SceneDelegate.swift in Sources */,
 				FC0CCE832C6103A900202D1B /* UnsplashPhoto.swift in Sources */,
+				FC0CCE902C624A2100202D1B /* NetworkManagerUnsplash.swift in Sources */,
 				FC0CCE7E2C5F889700202D1B /* DateInformationViewControllerConfigure.swift in Sources */,
 				FC42D6252C5E618E00650093 /* DatePickerViewController.swift in Sources */,
 				FC0CCE812C61038E00202D1B /* UnsplashResponse.swift in Sources */,
+				FC0CCE922C624A7400202D1B /* NetworkManagerNumbers.swift in Sources */,
 				FC0CCE6F2C5ECD1600202D1B /* NetworkManager.swift in Sources */,
 				FC0CCE762C5EE3F400202D1B /* BaseViewController.swift in Sources */,
 				FC0CCE892C6109CC00202D1B /* DatePickerViewControllerFetchMethod.swift in Sources */,
 				FC0CCE872C61098500202D1B /* DatePickerViewControllerLoaderLogic.swift in Sources */,
 				FC0CCE852C6103CB00202D1B /* UnsplashPhotoURLs.swift in Sources */,
+				FC0CCE8C2C614F9300202D1B /* TranslateRequest.swift in Sources */,
+				FC0CCE982C624AF300202D1B /* CustomError.swift in Sources */,
+				FC0CCE962C624AD000202D1B /* API.swift in Sources */,
 				FC0CCE672C5E697E00202D1B /* DatePickerViewControllerConfigure.swift in Sources */,
+				FC0CCE942C624AA200202D1B /* NetworkManagerYandex.swift in Sources */,
 				FC0CCE692C5EBC1A00202D1B /* CustomButton.swift in Sources */,
 				FC0CCE6C2C5ECB4700202D1B /* DateInformationViewController.swift in Sources */,
+				FC0CCE8E2C61500400202D1B /* TranslateResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
