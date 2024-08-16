@@ -7,10 +7,12 @@
 
 import UIKit
 
-class DateInformationViewController: BaseViewController {
+class DateInformationViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 // MARK: - Init
-    var image: UIImage
-    var information: String
+    var image: UIImage?
+    var information: String?
+    var languages: [Language] = []
+    var loader: UIActivityIndicatorView?
     
     init(information: String, image: UIImage) {
         self.information = information
@@ -32,6 +34,11 @@ class DateInformationViewController: BaseViewController {
         return view
     }()
     
+    var languagePicker: UIPickerView = {
+        let picker = UIPickerView()
+        return picker
+    }()
+    
     var informationImage: UIImageView = {
         let image = UIImageView()
         return image
@@ -47,11 +54,16 @@ class DateInformationViewController: BaseViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
         
+        self.fetchLanguages()
+        
         self.view.addSubview(scrollView)
         self.configureScrollView()
         
         scrollView.addSubview(contentView)
         self.configureContentView()
+        
+        contentView.addSubview(languagePicker)
+        self.configureLanguagePicker()
         
         contentView.addSubview(informationImage)
         self.configureInformationImage()

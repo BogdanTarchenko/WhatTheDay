@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - fetch function for YandexAPI
+// MARK: - fetch functions for YandexAPI
 extension NetworkManager {
     func translateText(text: String, targetLanguage: String, completion: @escaping (Result<String, CustomError>) -> Void) {
         
@@ -25,4 +25,23 @@ extension NetworkManager {
             }
         }
     }
+    
+    func getLanguagesList(completion: @escaping (Result<[Language], CustomError>) -> Void) {
+        
+        let api = Api.languages(apiKey: APIKeys.yandexAPIKey)
+        fetch(api: api, resultType: LanguagesResponse.self) { result in
+            switch result {
+            case .success(let response):
+                let languages = response.languages.compactMap { language -> Language? in
+                    guard let code = language.code, let name = language.name, !name.isEmpty else { return nil }
+                    return Language(code: code, name: name)
+                }
+                completion(.success(languages))
+                
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
 }

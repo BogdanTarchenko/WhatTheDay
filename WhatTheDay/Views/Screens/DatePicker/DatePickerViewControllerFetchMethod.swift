@@ -20,13 +20,17 @@ extension DatePickerViewController {
                 switch result {
                 case .success(let response):
                     self.information = response
-                    self.translateInformation(networkManager: networkManager, completion: completion)
+                    self.translateInformation {
+                        self.hideLoader()
+                        completion()
+                    }
+                    
                 case .failure:
                     self.information = Constants.emptyString
                     self.image = Constants.emptyImage
+                    self.hideLoader()
                     completion()
                 }
-                self.hideLoader()
             }
         }
     }
@@ -34,19 +38,19 @@ extension DatePickerViewController {
 
 // MARK: - Translate Information
 extension DatePickerViewController {
-    func translateInformation(networkManager: NetworkManager, completion: @escaping () -> Void) {
+    func translateInformation(completion: @escaping () -> Void) {
         let textToTranslate = self.information ?? Constants.emptyString
         let targetLanguage = "ru"
         
+        let networkManager = NetworkManager()
         networkManager.translateText(text: textToTranslate, targetLanguage: targetLanguage) { translationResult in
             DispatchQueue.main.async {
                 switch translationResult {
                 case .success(let translatedText):
-                    self.fetchImage(networkManager: networkManager, completion: completion)
                     self.information = translatedText
-                    print(translatedText)
+                    self.fetchImage(networkManager: networkManager, completion: completion)
+                    
                 case .failure(let error):
-                    print(error)
                     self.image = Constants.emptyImage
                     completion()
                 }
@@ -63,6 +67,7 @@ extension DatePickerViewController {
                 switch result {
                 case .success(let image):
                     self.image = image
+                    
                 case .failure:
                     self.image = Constants.emptyImage
                 }
