@@ -35,6 +35,10 @@ extension DateInformationViewController {
 extension DateInformationViewController {
     func translateInformation(to targetLanguage: String, completion: @escaping () -> Void) {
         
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            windowScene.windows.first?.isUserInteractionEnabled = false
+        }
+        
         DispatchQueue.main.async {
             self.showLoader()
         }
@@ -54,6 +58,10 @@ extension DateInformationViewController {
                 }
                 self.hideLoader()
                 completion()
+                
+                if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                    windowScene.windows.first?.isUserInteractionEnabled = true
+                }
             }
         }
     }

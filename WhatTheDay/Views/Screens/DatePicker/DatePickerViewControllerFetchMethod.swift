@@ -10,6 +10,11 @@ import UIKit
 // MARK: - Fetch Information
 extension DatePickerViewController {
     func fetchInformation(completion: @escaping () -> Void) {
+        
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            windowScene.windows.first?.isUserInteractionEnabled = false
+        }
+        
         DispatchQueue.main.async {
             self.showLoader()
         }
@@ -23,6 +28,10 @@ extension DatePickerViewController {
                     self.translateInformation {
                         self.hideLoader()
                         completion()
+                        
+                        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                            windowScene.windows.first?.isUserInteractionEnabled = true
+                        }
                     }
                     
                 case .failure:
@@ -30,6 +39,10 @@ extension DatePickerViewController {
                     self.image = Constants.emptyImage
                     self.hideLoader()
                     completion()
+                    
+                    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                        windowScene.windows.first?.isUserInteractionEnabled = true
+                    }
                 }
             }
         }
