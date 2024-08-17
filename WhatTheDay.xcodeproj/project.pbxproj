@@ -214,7 +214,6 @@
 			isa = PBXGroup;
 			children = (
 				FC42D60B2C5E5EB800650093 /* WhatTheDay */,
-				FC0CCED32C70C6F600202D1B /* screenshots */,
 				FC42D60A2C5E5EB800650093 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -250,6 +249,7 @@
 		FC42D6212C5E60B100650093 /* Resourses */ = {
 			isa = PBXGroup;
 			children = (
+				FC0CCED32C70C6F600202D1B /* screenshots */,
 				FC42D6152C5E5EBA00650093 /* Assets.xcassets */,
 				FC42D61A2C5E5EBA00650093 /* Info.plist */,
 				FC0CCE5F2C5E672F00202D1B /* Localizable.xcstrings */,
