@@ -8,7 +8,7 @@
 import UIKit
 
 class DatePickerViewController: BaseViewController, CustomButtonDelegate {
-// MARK: - Init
+    // MARK: - Init
     var image: UIImage?
     var information: String?
     var loader: UIActivityIndicatorView?
@@ -33,7 +33,7 @@ class DatePickerViewController: BaseViewController, CustomButtonDelegate {
         return button
     }()
     
-// MARK: - Lifecycle
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground

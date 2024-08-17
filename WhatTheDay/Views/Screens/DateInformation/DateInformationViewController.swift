@@ -8,7 +8,7 @@
 import UIKit
 
 class DateInformationViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-// MARK: - Init
+    // MARK: - Init
     var image: UIImage?
     var information: String?
     var languages: [Language] = []
@@ -21,7 +21,9 @@ class DateInformationViewController: BaseViewController, UIPickerViewDelegate, U
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        self.information = Constants.emptyString
+        self.image = Constants.emptyImage
+        super.init(coder: coder)
     }
     
     let scrollView: UIScrollView = {
@@ -49,7 +51,7 @@ class DateInformationViewController: BaseViewController, UIPickerViewDelegate, U
         return label
     }()
     
-// MARK: - Lifecycle
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground

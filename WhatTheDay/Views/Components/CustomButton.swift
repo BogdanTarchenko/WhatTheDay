@@ -12,7 +12,7 @@ protocol CustomButtonDelegate: AnyObject {
 }
 
 class CustomButton: UIButton {
-// MARK: - Init
+    // MARK: - Init
     weak var delegate: CustomButtonDelegate?
     
     override init(frame: CGRect) {

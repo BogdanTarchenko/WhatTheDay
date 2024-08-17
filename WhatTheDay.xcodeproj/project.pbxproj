@@ -15,8 +15,6 @@
 		FC0CCE762C5EE3F400202D1B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE752C5EE3F400202D1B /* BaseViewController.swift */; };
 		FC0CCE7E2C5F889700202D1B /* DateInformationViewControllerConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE7D2C5F889700202D1B /* DateInformationViewControllerConfigure.swift */; };
 		FC0CCE812C61038E00202D1B /* UnsplashResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE802C61038E00202D1B /* UnsplashResponse.swift */; };
-		FC0CCE832C6103A900202D1B /* UnsplashPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE822C6103A900202D1B /* UnsplashPhoto.swift */; };
-		FC0CCE852C6103CB00202D1B /* UnsplashPhotoURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE842C6103CB00202D1B /* UnsplashPhotoURLs.swift */; };
 		FC0CCE872C61098500202D1B /* DatePickerViewControllerLoaderLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE862C61098500202D1B /* DatePickerViewControllerLoaderLogic.swift */; };
 		FC0CCE892C6109CC00202D1B /* DatePickerViewControllerFetchMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE882C6109CC00202D1B /* DatePickerViewControllerFetchMethod.swift */; };
 		FC0CCE8C2C614F9300202D1B /* TranslateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCE8B2C614F9300202D1B /* TranslateRequest.swift */; };
@@ -50,8 +48,6 @@
 		FC0CCE752C5EE3F400202D1B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		FC0CCE7D2C5F889700202D1B /* DateInformationViewControllerConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInformationViewControllerConfigure.swift; sourceTree = "<group>"; };
 		FC0CCE802C61038E00202D1B /* UnsplashResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashResponse.swift; sourceTree = "<group>"; };
-		FC0CCE822C6103A900202D1B /* UnsplashPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPhoto.swift; sourceTree = "<group>"; };
-		FC0CCE842C6103CB00202D1B /* UnsplashPhotoURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashPhotoURLs.swift; sourceTree = "<group>"; };
 		FC0CCE862C61098500202D1B /* DatePickerViewControllerLoaderLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewControllerLoaderLogic.swift; sourceTree = "<group>"; };
 		FC0CCE882C6109CC00202D1B /* DatePickerViewControllerFetchMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewControllerFetchMethod.swift; sourceTree = "<group>"; };
 		FC0CCE8B2C614F9300202D1B /* TranslateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateRequest.swift; sourceTree = "<group>"; };
@@ -124,8 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				FC0CCE802C61038E00202D1B /* UnsplashResponse.swift */,
-				FC0CCE822C6103A900202D1B /* UnsplashPhoto.swift */,
-				FC0CCE842C6103CB00202D1B /* UnsplashPhotoURLs.swift */,
 			);
 			path = Unsplash;
 			sourceTree = "<group>";
@@ -169,13 +163,6 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		FC0CCEC62C6FDEE900202D1B /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		FC42D6002C5E5EB700650093 = {
 			isa = PBXGroup;
 			children = (
@@ -197,7 +184,6 @@
 			children = (
 				FC42D6202C5E60A100650093 /* App */,
 				FC42D6232C5E60E700650093 /* Models */,
-				FC0CCEC62C6FDEE900202D1B /* Data */,
 				FC42D6222C5E60CD00650093 /* Views */,
 				FC42D6212C5E60B100650093 /* Resourses */,
 			);
@@ -343,7 +329,6 @@
 				FC0CCE9D2C624B4300202D1B /* APIKeys.swift in Sources */,
 				FC42D60D2C5E5EB800650093 /* AppDelegate.swift in Sources */,
 				FC42D60F2C5E5EB800650093 /* SceneDelegate.swift in Sources */,
-				FC0CCE832C6103A900202D1B /* UnsplashPhoto.swift in Sources */,
 				FC0CCE902C624A2100202D1B /* NetworkManagerUnsplash.swift in Sources */,
 				FC0CCE7E2C5F889700202D1B /* DateInformationViewControllerConfigure.swift in Sources */,
 				FC42D6252C5E618E00650093 /* DatePickerViewController.swift in Sources */,
@@ -356,7 +341,6 @@
 				FC0CCE892C6109CC00202D1B /* DatePickerViewControllerFetchMethod.swift in Sources */,
 				FC0CCE872C61098500202D1B /* DatePickerViewControllerLoaderLogic.swift in Sources */,
 				FC0CCECC2C6FE8D900202D1B /* EmptyRequest.swift in Sources */,
-				FC0CCE852C6103CB00202D1B /* UnsplashPhotoURLs.swift in Sources */,
 				FC0CCECA2C6FE26F00202D1B /* DateInformationViewControllerFetchMethod.swift in Sources */,
 				FC0CCE8C2C614F9300202D1B /* TranslateRequest.swift in Sources */,
 				FC0CCE982C624AF300202D1B /* CustomError.swift in Sources */,
