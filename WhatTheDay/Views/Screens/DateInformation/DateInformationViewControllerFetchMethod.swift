@@ -19,11 +19,14 @@ extension DateInformationViewController {
                     self?.languages = languages
                     self?.languagePicker.reloadAllComponents()
                     
-                    if let defaultIndex = self?.languages.firstIndex(where: { $0.code == "ru" }) {
+                    if let defaultIndex = self?.languages.firstIndex(where: { $0.code == Constants.defaultLanguageCode }) {
                         self?.languagePicker.selectRow(defaultIndex, inComponent: 0, animated: false)
                     }
                     
                 case .failure(let error):
+                    if let viewController = self {
+                        AlertManager.presentAlert(on: viewController, title: NSLocalizedString("fetchLanguagesAlertTitle", comment: ""), message: NSLocalizedString("fetchLanguagesAlertMessage", comment: ""), okButtonTitle: "OK")
+                    }
                     self?.languages = []
                 }
             }
@@ -53,6 +56,7 @@ extension DateInformationViewController {
                     self.information = translatedText
                     
                 case .failure(let error):
+                    AlertManager.presentAlert(on: self, title: NSLocalizedString("dateInformationAlertTitle", comment: ""), message: NSLocalizedString("dateInformationAlertMessage", comment: ""), okButtonTitle: "OK")
                     self.information = nil
                     self.image = Constants.emptyImage
                 }

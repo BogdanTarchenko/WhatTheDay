@@ -35,6 +35,7 @@ extension DatePickerViewController {
                     }
                     
                 case .failure:
+                    AlertManager.presentAlert(on: self, title: NSLocalizedString("datePickerAlertTitle", comment: ""), message: NSLocalizedString("datePickerAlertMessage", comment: ""), okButtonTitle: "OK")
                     self.information = Constants.emptyString
                     self.image = Constants.emptyImage
                     self.hideLoader()

@@ -31,6 +31,7 @@
 		FC0CCECA2C6FE26F00202D1B /* DateInformationViewControllerFetchMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCEC92C6FE26F00202D1B /* DateInformationViewControllerFetchMethod.swift */; };
 		FC0CCECC2C6FE8D900202D1B /* EmptyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCECB2C6FE8D900202D1B /* EmptyRequest.swift */; };
 		FC0CCECE2C6FF45900202D1B /* DateInformationViewControllerLoaderLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCECD2C6FF45900202D1B /* DateInformationViewControllerLoaderLogic.swift */; };
+		FC0CCED22C70B2F900202D1B /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CCED12C70B2F900202D1B /* Alert.swift */; };
 		FC42D60D2C5E5EB800650093 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42D60C2C5E5EB800650093 /* AppDelegate.swift */; };
 		FC42D60F2C5E5EB800650093 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC42D60E2C5E5EB800650093 /* SceneDelegate.swift */; };
 		FC42D6162C5E5EBA00650093 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC42D6152C5E5EBA00650093 /* Assets.xcassets */; };
@@ -65,6 +66,7 @@
 		FC0CCEC92C6FE26F00202D1B /* DateInformationViewControllerFetchMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInformationViewControllerFetchMethod.swift; sourceTree = "<group>"; };
 		FC0CCECB2C6FE8D900202D1B /* EmptyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyRequest.swift; sourceTree = "<group>"; };
 		FC0CCECD2C6FF45900202D1B /* DateInformationViewControllerLoaderLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInformationViewControllerLoaderLogic.swift; sourceTree = "<group>"; };
+		FC0CCED12C70B2F900202D1B /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		FC42D6092C5E5EB800650093 /* WhatTheDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatTheDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC42D60C2C5E5EB800650093 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC42D60E2C5E5EB800650093 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 			children = (
 				FC0CCE752C5EE3F400202D1B /* BaseViewController.swift */,
 				FC0CCE682C5EBC1A00202D1B /* CustomButton.swift */,
+				FC0CCED12C70B2F900202D1B /* Alert.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				FC42D6252C5E618E00650093 /* DatePickerViewController.swift in Sources */,
 				FC0CCEC82C6FDF0900202D1B /* LanguagesResponse.swift in Sources */,
 				FC0CCE812C61038E00202D1B /* UnsplashResponse.swift in Sources */,
+				FC0CCED22C70B2F900202D1B /* Alert.swift in Sources */,
 				FC0CCE922C624A7400202D1B /* NetworkManagerNumbers.swift in Sources */,
 				FC0CCE6F2C5ECD1600202D1B /* NetworkManager.swift in Sources */,
 				FC0CCE762C5EE3F400202D1B /* BaseViewController.swift in Sources */,
