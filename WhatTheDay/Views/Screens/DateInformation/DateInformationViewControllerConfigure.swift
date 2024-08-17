@@ -23,24 +23,13 @@ extension DateInformationViewController {
         }
     }
     
-    func configureLanguagePicker() {
-        self.languagePicker.delegate = self
-        self.languagePicker.dataSource = self
-        
-        self.languagePicker.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(Constants.insetValue())
-            make.top.equalToSuperview()
-            make.height.equalTo(Constants.pickerHeightValue())
-        }
-    }
-    
     func configureInformationImage() {
         self.informationImage.image = self.image
         self.informationImage.contentMode = .scaleAspectFit
         
         self.informationImage.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Constants.insetValue())
-            make.top.equalTo(languagePicker.snp.bottom)
+            make.top.equalToSuperview()
         }
     }
     
@@ -54,7 +43,18 @@ extension DateInformationViewController {
         self.informationLabel.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Constants.insetValue())
             make.top.equalTo(informationImage.snp.bottom).offset(Constants.offsetValue())
+        }
+    }
+    
+    func configureLanguagePicker() {
+        self.languagePicker.delegate = self
+        self.languagePicker.dataSource = self
+        
+        self.languagePicker.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(Constants.insetValue())
+            make.top.equalTo(informationLabel.snp.bottom)
             make.bottom.equalToSuperview().offset(-Constants.offsetValue())
+            make.height.equalTo(Constants.pickerHeightValue())
         }
     }
 }
@@ -107,7 +107,7 @@ extension DateInformationViewController {
         }
         
         static func pickerHeightValue() -> CGFloat {
-            return screenHeight * 0.3
+            return screenHeight * 0.2
         }
     }
 }

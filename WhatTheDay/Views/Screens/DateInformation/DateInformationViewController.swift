@@ -62,13 +62,13 @@ class DateInformationViewController: BaseViewController, UIPickerViewDelegate, U
         scrollView.addSubview(contentView)
         self.configureContentView()
         
-        contentView.addSubview(languagePicker)
-        self.configureLanguagePicker()
-        
         contentView.addSubview(informationImage)
         self.configureInformationImage()
         
         contentView.addSubview(informationLabel)
         self.configureInformationLabel()
+        
+        contentView.addSubview(languagePicker)
+        self.configureLanguagePicker()
     }
 }
